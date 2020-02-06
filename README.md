@@ -9,7 +9,7 @@
 
 ### Association
 - has_many :messasges, dependent: :nullify
-- has_many :users_groups, dependent: :destroy
+- has_many :users_groups
 - has_many :groups,  through: :users_groups
 
 ## messagesテーブル
