@@ -8,7 +8,7 @@
 |name|string|null: false|
 
 ### Association
-- has_many :messasges, dependent: :nullify
+- has_many :messages, dependent: :nullify
 - has_many :users_groups
 - has_many :groups,  through: :users_groups
 
