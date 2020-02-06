@@ -24,7 +24,7 @@
 - belongs_to :user
 - belongs_to :group
 
-## groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -32,7 +32,7 @@
 ### Association
 - has_many :massages
 - has_many :users_groups
-- has_many :user,  through: :users_groups
+- has_many :users,  through: :users_groups
 
 ## users_groupsテーブル
 |Column|Type|Options|
