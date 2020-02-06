@@ -30,8 +30,8 @@
 |name|string|null: false|
 
 ### Association
-- has_many :massages, dependent: :destroy
-- has_many :users_groups, dependent: :destroy
+- has_many :massages
+- has_many :users_groups
 - has_many :user,  through: :users_groups
 
 ## users_groupsテーブル
