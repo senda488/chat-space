@@ -1,0 +1,66 @@
+
+.wrapper
+  = render "shared/side_bar"
+  = render "shared/main_chat"
+.side-bar
+  .user-name
+    .user-name__top-item
+      .user-name__top-item__name
+        %span<>
+        masa
+      %ul{ class: 'user-name__top-item__menu'}
+        %li{ class: 'user-name__top-item__menu__btn'}
+          = link_to "#" do
+            = icon('fas', 'edit')
+            %span<>
+          = link_to "#" do
+            = icon('fas', 'cog')
+            %span<>
+  .group-list
+    = link_to "#", class: "agroup" do
+      %p{ class: 'agroup-name'}
+        techcamp
+      %p{ class: 'agroup-message'}
+        まだメッセージがありません
+    = link_to "#", class: "agroup" do
+      %p{ class: 'agroup-name'}
+        techcamp2
+      %p{ class: 'agroup-message'}
+        まだメッセージがありません
+
+.chat-main
+  .group-info
+    .group-info__left-content
+      %p{ class: 'group-info__left-content__group'}
+        test
+      %ul{ class: 'group-info__left-content__member'}
+        member:
+        %li{ class: 'group-info__left-content__member-name'}
+          sss
+    .group-info__right-content
+      = link_to "#", class: "group-info__right-content__edit" do
+        Edit
+  .message-list
+    .message-list__message
+      .message-list__message-info
+        .message-list__message-info-name
+          masa
+        .message-list__message-info-date
+          2020/2/10 12:00
+      .message-list__message-chat
+        おはよう！
+    .message-list__message
+      .message-list__message-info
+        .message-list__message-info-name
+          ma
+        .message-list__message-info-date
+          2020/2/03 12:00
+      .message-list__message-chat
+        おはよう！!!
+  .message-form
+    .message-form__box
+      %input{type: "text", class: "message-form__box-text", placeholder: "type a messasge"}
+      %label{class: "message-form__box-icon"}
+        = icon('far', 'image')
+        %input{type: "file", class: "message-form__box-icon-text"}
+    %input{type: "submit", value: "Send", class: "message-form__box-send"}
