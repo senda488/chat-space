@@ -61,17 +61,20 @@
     background-color: #2f3e51;
     padding: 0 20px;
     .agroup{
-      font-weight: bold;
-      color: $FontColor;
-      text-decoration: none;
       &-name{
         font-size: 15px;
         padding-top: 20px;
         margin-bottom: 5px;
+        color: $FontColor;
       }
       &-message{
         font-size: 11px;
         padding-bottom: 40px;
+        color: $FontColor;
+      }
+      a {
+        text-decoration: none;
+        font-weight: bold;
       }
     }
   }
