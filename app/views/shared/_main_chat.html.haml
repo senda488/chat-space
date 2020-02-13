@@ -2,35 +2,24 @@
   .group-info
     .group-info__left-content
       %p{ class: 'group-info__left-content__group'}
-        test
+        = @group.name
       %ul{ class: 'group-info__left-content__member'}
         member:
         %li{ class: 'group-info__left-content__member-name'}
-          sss
+          - @group.users.each do |user|
+            = user.name
     .group-info__right-content
-      = link_to "#", class: "group-info__right-content__edit" do
+      = link_to edit_group_path(@group), class: "group-info__right-content__edit" do
         Edit
   .message-list
     .message-list__message
       .message-list__message-info
-        .message-list__message-info-name
-          masa
-        .message-list__message-info-date
-          2020/2/10 12:00
-      .message-list__message-chat
-        おはよう！
-    .message-list__message
-      .message-list__message-info
-        .message-list__message-info-name
-          ma
-        .message-list__message-info-date
-          2020/2/03 12:00
-      .message-list__message-chat
-        おはよう！!!
+        = render partial: 'message', collection: @messages
   .message-form
-    .message-form__box
-      %input{type: "text", class: "message-form__box-text", placeholder: "type a messasge"}
-      %label{class: "message-form__box-icon"}
-        = icon('far', 'image')
-        %input{type: "file", class: "message-form__box-icon-text"}
-    %input{type: "submit", value: "Send", class: "message-form__box-send"}
+    = form_for [@group, @message] do |f|
+      .message-form__box
+        = f.text_field :content, class: "message-form__box-text", placeholder: "type a messasge"
+        = f.label :image, class: "message-form__box-icon" do
+          = icon('far', 'image')
+          = f.file_field :image , class: "message-form__box-icon-text"
+      = f.submit "Send", class: "message-form__box-send"
