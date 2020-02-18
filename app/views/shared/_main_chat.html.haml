@@ -12,9 +12,7 @@
       = link_to edit_group_path(@group), class: "group-info__right-content__edit" do
         Edit
   .message-list
-    .message-list__message
-      .message-list__message-info
-        = render partial: 'message', collection: @messages
+    = render partial: 'message', collection: @messages
   .message-form
     = form_for [@group, @message] do |f|
       .message-form__box

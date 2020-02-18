@@ -60,6 +60,7 @@
     width: 300px;
     background-color: #2f3e51;
     padding: 0 20px;
+    overflow: scroll;
     .agroup{
       &-name{
         font-size: 15px;
@@ -81,8 +82,7 @@
 }
 
 .chat-main {
-  width: calc(100vw - 300px);
-  height: 100vh;
+  width: calc(100% - 300px);
   background-color: $FontColor;
   float: left;
   .group-info{
@@ -134,14 +134,16 @@
     height: calc(100vh - 100px - 90px);
     background-color:#fafafa;
     padding-top: 35px;
+    overflow: scroll;
     &__message{
-      height: 100px;
+      // height: 100px;
       width: calc(100% - 80px);
       margin-left: 40px; 
+      padding-bottom: 40px;
       &-info{
         height: 30px;
         width: 300px;
-        margin-bottom: 12px;
+        margin-bottom: 5px;
         &-name{
           float: left;
           color: #333333;
@@ -155,11 +157,13 @@
         }
       }
       &-chat{
-        height: 30px;
+        // height: 30px;
         width: 100%;
-        margin-bottom: 40px;
         color: #434a54;
         font-size: 14px;
+        .lower-message__content{
+        
+        }
       }
     }
     
