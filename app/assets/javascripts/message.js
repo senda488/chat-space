@@ -59,10 +59,12 @@ $(function(){
       $('.message-list').append(html);    
       $('.message-list').animate({scrollTop: $('.message-list')[0].scrollHeight}, 'fast');  
       $('form')[0].reset();
-      $(".message-form__box-send").prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+    })
+    .always(function() {
+      $(".message-form__box-send").prop("disabled", false);
     });
   });
 });
