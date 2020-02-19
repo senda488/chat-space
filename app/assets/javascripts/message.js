@@ -104,7 +104,7 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
+      alert("メッセージ更新に失敗しました");
     })
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
