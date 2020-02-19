@@ -55,7 +55,6 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      console.log(html);
       $('.message-list').append(html);    
       $('.message-list').animate({scrollTop: $('.message-list')[0].scrollHeight}, 'fast');  
       $('form')[0].reset();
