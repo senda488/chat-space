@@ -3,7 +3,7 @@ $(function(){
   var buildHTML = function(message) {
     if (message.content && message.image ) {
       var html =
-        `<div class="message-list__message" data-message-id = message.id >
+        `<div class="message-list__message" data-message-id = ${message.id} >
           <div class="message-list__message-info">
             <div class="message-list__message-info-name">
               ${message.user_name}
@@ -17,7 +17,7 @@ $(function(){
               ${message.content}
             </p>
           </div>
-          <img src="${message.image}" class="lower-message__image" >
+          <img src="${message.image}" class="lower-message__content" >
         </div>`
     } else if (message.content) {
       var html =
